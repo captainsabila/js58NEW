@@ -1,0 +1,16 @@
+First One:
+cd /Users/sdemopoulos/js58/Sites
+mkdir -p my-awesome-directory/nested-directory
+touch hello.txt
+cd /Users/sdemopoulos/js58/Sites
+touch terminals-are-fun.txt
+
+
+
+Second One
+cd /Users/sdemopoulos/js58/Sites
+mkdir -p 1/2/3/4/5/6/7/8/9/hello/its/me
+touch adele.jpg
+cd /Users/sdemopoulos/js58/Sites (or use arrows or history)
+mkdir -p 'i/was/wondering/if/after/all/these/years/you world/like/to'
+touch meet.jpg
