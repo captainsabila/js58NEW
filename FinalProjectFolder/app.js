@@ -1,4 +1,4 @@
-/*var config = {
+var config = {
     apiKey: "AIzaSyCL93RJhXbUkFkwhTPzu5Qa7-09q_YIwMo",
     authDomain: "final-project-draft.firebaseapp.com",
     databaseURL: "https://final-project-draft.firebaseio.com",
@@ -8,7 +8,7 @@
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-*/
+
 $(function() {
     $("#objectives").on('change', function(event) {
         if ($(this).val === "map") {
@@ -53,10 +53,17 @@ $(function() {
         var numberCampaigns = parseInt($('#number-of-campaigns').val());
         var dailySpend = ioAmount / dayDiff;
         var dailySpendPerCampaign = dailySpend / numberCampaigns;
-        console.log(dayDiff, ioAmount, dailySpendPerCampaign, numberCampaigns)
 
-        console.log('numberCampaigns', numberCampaigns);
-        var csvArray = [];
+        var InterestInputKey = $('#interest-box').val();
+        var dbQuery = database.ref("0/" + InterestInputKey);
+        dbQuery.on('value', function(addinterestvalue) {
+            console.log ("interest ads editor id is " + addinterestvalue.val());
+        })
+        
+
+
+
+      	var csvArray = [];
         for (var i = 0; i < numberCampaigns; i++) {
             var campaignID = "new_C" + (i + 1);
             var dailyBudgetCap = dailySpendPerCampaign;
@@ -64,15 +71,14 @@ $(function() {
             csvArray.push(row);
         }
 
-        var headers = "campaignID,Daily Budget Cap,Interest, Behaviors\n"
+        var headers = "campaignID,Daily Budget Cap,\n"
         var csvString = "";
         csvArray.forEach(function(row) {
-        	csvString += row.campaignID + ',' + row.dailyBudgetCap + '\n';
+            csvString += row.campaignID + ',' + row.dailyBudgetCap,"\n";
         });
 
         var encodedUri = encodeURI("data:text/csv;charset=utf-8," + headers + csvString);
         window.open(encodedUri);
-        // var headers = Object.keys(csvArray[0]);
-
-    })
+            //	var headers = Object.keys(csvArray[0]);
+        })
 })
