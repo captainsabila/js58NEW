@@ -1,0 +1,17 @@
+Campaign Start Date
+Campaign End Date  
+
+This calculates flight length
+Input IO Amount
+daily spend = IO amount/Flight length 
+
+Number of campaigns input field
+campaign daily budget = daily spend/number of campaigns 
+
+If mobile app promotion need to define placement(TAP/O&O)
+Need to select bid (OAB, CPAC, CPI), populates default bid amounts
+
+when targeting options are selected, an auto-populating box appears to pull interests from firebase. 
+
+keydown for autocomplete
+

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Sabila's Final Project</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Let's Create a Twitter Advertising Campaign</h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Campaign Flight</h2>
+                    </div>
+                </div>
+                When do we start?
+                <form>
+                    <input id="campaign-start-date" type="date">
+                </form>
+                When does the campaign end?
+                <form>
+                    <input id="campaign-end-date" type="date">
+                </form>
+                What is the IO amount?
+                <form>
+                    <input id="io-amount" type="number">
+                </form>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>What is our objective?</h2>
+                    </div>
+                    <div class="col-md-5">
+                        <select id="objectives" class="form-control">
+                            <option value="map">Mobile App Promotion</option>
+                            <option value="vv">Video Views</option>
+                            <option value="wc">Website Clicks</option>
+                            <option value="reach">Reach/Awareness</option>
+                        </select>
+                        <div id="map-bid-type">
+                            <h3>What bids do you want to use?</h3>
+                            <br>
+                            <form>
+                                <input type="checkbox" name="oab">Optimized Action Bidding</input>
+                                <input type="checkbox" name="cpi">Cost Per Install</input>
+                                <input type="checkbox" name="cpac">Cost Per App Click</input>
+                            </form>
+                        </div>
+                        <div class="col-md-12">
+                            <h2>How many campaigns are we running?</h2>
+                        </div>
+                        <form>
+                            <input type="number" id="number-of-campaigns">
+                        </form>
+                        <h2>What kind of targeting would you want to use?</h2>
+                        <br>
+                        <form id="targeting-types">
+                            <input type="checkbox" id="interests">Interests</input>
+                            <br>
+                            <input type="checkbox" name="followers">Handles</input>
+                            <br>
+                            <input type="checkbox" name="kws">Keywords</input>
+                            <br>
+                            <input type="checkbox" name="kws">Behaviors</input>
+                        </form>
+                        <div id="interest-input" hidden=true>
+                            <input type="text">Enter Interest here, e.g. 'Biographies and memoirs'</input>
+                            <br>
+                        </div>
+                        <div class="col-md-5">
+                            <select id="sources" class="form-control">
+                                <h3>What Gender are we targeting</h3>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="any-gender">Any Gender</option>
+                                <br>
+                            </select>
+                            <button type="button" id="btn">Generate Sheet</button>
+                        </div>
+                    </div>
+</body>
+
+</html>
