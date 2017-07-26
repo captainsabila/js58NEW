@@ -74,7 +74,7 @@ $(function() {
         var headers = "campaignID,Daily Budget Cap,\n"
         var csvString = "";
         csvArray.forEach(function(row) {
-            csvString += row.campaignID + ',' + row.dailyBudgetCap,"\n";
+            csvString += row.campaignID + ',' + row.dailyBudgetCap+"\n";
         });
 
         var encodedUri = encodeURI("data:text/csv;charset=utf-8," + headers + csvString);
